@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
 
     puts "\e[2J\e[f"
     puts "destroying tables"
@@ -34,6 +33,4 @@ ApplicationRecord.transaction do
     as2 = ArtworkShare.create!(artwork_id: a3.id, viewer_id: u2.id)
     as3 = ArtworkShare.create!(artwork_id: a2.id, viewer_id: u5.id)
     as4 = ArtworkShare.create!(artwork_id: a3.id, viewer_id: u4.id)
-    as5 = ArtworkShare.create!(artwork_id: a1.id, viewer_id: u5.id)
-
-end
+    as5 = ArtworkShare.create!(artwork_id: a1.id, viewer_id: u3.id)
