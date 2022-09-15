@@ -39,3 +39,10 @@
     c2 = Comment.create!(artwork_id: a2.id, author_id: u1.id, body: 'Sublime')
     c3 = Comment.create!(artwork_id: a3.id, author_id: u3.id, body: 'Stupendous')
     c4 = Comment.create!(artwork_id: a2.id, author_id: u4.id, body: 'y''all crezy this urt sucks')
+
+    l1 = Like.create!(liker_id: u1, likable_id: a2)
+    l2 = Like.create!(liker_id: u1, likable_id: a2)
+    l3 = Like.create!(liker_id: u1, likable_id: a2)
+    l4 = Like.create!(liker_id: u1, likable_id: a2)
+    l5 = Like.create!(liker_id: u1, likable_id: a2)
+    l6 = Like.create!(liker_id: u1, likable_id: a2)

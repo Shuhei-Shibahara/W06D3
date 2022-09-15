@@ -38,4 +38,8 @@ class Artwork < ApplicationRecord
         through: :shares,
         source: :viewer
 
+    has_many :likes,
+        as: :likable,
+        dependent: :destroy
+
 end
