@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :artwork_shares, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy, :index]
   
   # get 'users', to: 'users#index', as: 'users'
   # post 'users', to: 'users#create'
