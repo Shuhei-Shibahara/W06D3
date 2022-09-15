@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        User.destroy_by(id: params[:id]) render json: ['User Deleted']
+        User.destroy_by(id: params[:id]) 
+        # render json: ['User Deleted']
     end
 
     def index
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to user_url(@user)
         else 
-            render json: @user.errors.full_messages, status: :422
+            render json: @user.errors.full_messages, status: 422
         end 
     end 
 
