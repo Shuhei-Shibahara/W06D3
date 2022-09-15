@@ -15,13 +15,20 @@ class CommentsController < ApplicationController
     end
 
     def index 
-        @comment = Comment.all
+        if params[:user_id]
+            @comment = Comment.find_by(author_id: params[:user_id])
+        elsif params[:artwork_id]
+            @comment = Comment.find_by(artwork_id: params[:search_id])
+        else
+            @comment = Comment.all
+        end
         render json: @comment
     end 
 
     private 
     
     def comment_params
-        param.require(:comment).permit(:author_id, :body, :artwork_id)
+        param.require(:comment).permit(:author_id, :body, :artwork_id, :user_id, :search_id)
+
     end 
 end
