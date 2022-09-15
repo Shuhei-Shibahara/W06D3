@@ -23,6 +23,11 @@ class Artwork < ApplicationRecord
     belongs_to :artist,
     class_name: :User
 
+    has_many :comments,
+        foreign_key: :artwork_id,
+        dependent: :destroy
+
+
     has_many :shares,
         foreign_key: :artwork_id,
         class_name: :ArtworkShare,

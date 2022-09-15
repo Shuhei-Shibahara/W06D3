@@ -14,7 +14,8 @@ class ArtworkShare < ApplicationRecord
     belongs_to :artwork
 
     belongs_to :viewer,
-        class_name: :User
+        class_name: :User,
+        inverse_of: :shares
 
 
 end
