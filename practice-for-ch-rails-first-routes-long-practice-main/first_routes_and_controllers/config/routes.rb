@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   
   resources :users, only: [:index, :create, :show, :update, :destroy]
-  resources :artworks, only: [:index, :create, :show, :update, :destroy]
+  resources :artworks, only: [:create, :show, :update, :destroy]
+    resources :users do
+      :artworks, only: :index
+    end
+  resources :artwork_shares, only: [:create, :destroy]
   
   # get 'users', to: 'users#index', as: 'users'
   # post 'users', to: 'users#create'

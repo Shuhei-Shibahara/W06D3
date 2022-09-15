@@ -13,6 +13,10 @@ class Artwork < ApplicationRecord
     validates :artist_id, :image_url, :title, presence: true
     validates :artist_id, uniqueness: {scope: :title}
 
+    def self.artworks_for_user_id(id)
+        [:]
+    end
+
     belongs_to :artist,
     class_name: :User
 

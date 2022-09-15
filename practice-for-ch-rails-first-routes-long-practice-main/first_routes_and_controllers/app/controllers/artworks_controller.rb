@@ -11,7 +11,7 @@ class ArtworksController < ApplicationController
     end
 
     def destroy
-        Artwork.destroy_by(id: params(:id)) render json: ['Burned artwork']
+        Artwork.destroy_by(id: params[:id]) 
     end
 
     def index
@@ -20,12 +20,12 @@ class ArtworksController < ApplicationController
     end
 
     def show
-        @artwork = Artwork.find_by(id: params(:id))
+        @artwork = Artwork.find_by(id: params[:id])
         render json: @artwork
     end
 
     def update
-        @artwork = Artwork.find_by(id: params(:id))
+        @artwork = Artwork.find_by(id: params[:id])
         
         if @artwork.update(artwork_params)
             redirect_to artwork_url(@artwork), status: :updated
