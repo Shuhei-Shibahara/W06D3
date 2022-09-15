@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :create, :show, :update, :destroy]
   resources :artworks, only: [:create, :show, :update, :destroy]
-    resources :users do
-      :artworks, only: :index
-    end
+  
+  resources :users do
+    resources :artworks, only: [:index]
+  end
+
   resources :artwork_shares, only: [:create, :destroy]
   
   # get 'users', to: 'users#index', as: 'users'
